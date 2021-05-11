@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script> 
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+  </script>
+  
+  
+<style>
+body {
+  font-family: Arial; 
+}
+  
+.dropdown {
+  border-radius:37px; 
+  display:inline-block;
+  overflow:hidden;
+  margin-top: 1%;
+  margin-left: 7%;
+  background: blue;
+  border:1px solid #cccccc;
+}
+  
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 36px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: white}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius:36px;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: white;
+}
+
+.sidenav {
+  height: 100%;  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28.5%;
+  background-color: black;
+  overflow-x: hidden;
+  z-index: -1;
+  padding-bottom: 100%;
+}
+  
+.sidenav a {
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 8%;
+  color: white;
+  display: block;
+}
+  
+.sidenav a:hover {
+  color: grey;
+}
+  
+  h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    margin-left: 7.5%;
+     z-index: -1;
+  }
+  
+  h2 {
+    font-size: 18px;
+    margin-left: 8%;
+    color: white;
+    z-index: -1;
+  }
+  
+  h3 {
+    font-size: 14px;
+    margin-left: 8%;
+    color: white;
+    z-index: -1;
+  }
+  
+  h5 {
+    margin-left: 5%;
+  }
+  
+  img {
+    margin-left: 8%; 
+    z-index: 1;
+  }
+  
+  label {
+    padding-right: 5px;
+    font-size: 1rem;
+    color: white;
+}
+  
+  .progressbar {
+    margin-left: 8%; 
+    margin-top: -5%;
+  }
+  
+  .square {
+  height: 1500px;
+  width: 1000px;
+  background-color: black;
+  z-index: -1;
+}
+  
+.square2 {
+  height: 500px;
+  width: 400px;
+  color: white;
+  background-color: black;
+}
+  
+  .squaregroup {
+     margin-left: 30%;
+     position: absolute;
+  }
+  
+  h5 {
+    font-family: Arial;
+    color: white;
+    margin-left: 1.2%;
+  }
+  
+  .button { 
+  border: ridge;
+  background-color: black;
+  width: 20%;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 6px;
+  cursor: pointer;
+  border-radius: 25%;
+  margin-left: 1%;
+}
+  
+.profiletext {
+  margin-left: -65px;
+  margin-top: -15px;
+}
+
+.chat-container {
+  border-style: ridge;
+  width: 250px;
+  margin-left: 3%;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 15px;
+  position: relative;
+}
+
+.chat {
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.message {
+  border-radius: none;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.message.left {
+  padding: 15px 20px 15px 70px;
+  background-color: black;
+  border-style: ridge;
+  font-family: Arial;
+  color: white;
+  text-align: left;
+}
+
+.message.right {
+  padding: 15px 70px 15px 20px;
+  background-color: grey;
+  color: #fff;
+  text-align: left;
+}
+
+.avatar {
+  border-radius: none;
+  object-fit: cover;
+  position: absolute;
+  left: -15px;
+  top: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+.message p {
+  margin-left: 20px;
+  margin-top: -10px;
+}
+
+.text_input {
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  .sidenav {padding-bottom: 50%;}
+  .sidenav {width: 100%;}
+  .sidenav {height: 100%;}
+  .sidenav a {font-size: 17px;}
+  .squaregroup {margin-top: 250%;}
+  .squaregroup {margin-left: 0%;}
+  .square {margin-left: 0%;}
+  .square {width: 100%;}
+  .square {text-align: center;}
+  .square2 {margin-left: 0%;}
+  .square2 {width; 100%;}
+  .square2 {text-align: center;}
+  .button {margin-left:0%;}
+  .button {width: 20%;}
+}
+</style>
+</head>
+<body>
+  
+  <div class="squaregroup">
+<div class="square"><span style="color:white;font-weight:bold;font-size:36px;margin-left:10px;">Personal Details</span><h5>Do you have a driving license?</h5>
+      <button class="button button5">Yes</button><button class="button button5">No</button><br><h5>Do you have any dietary restrictions?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button><br><h5>Do you have drink alcohol?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button><h5>Do you have any tatoos and piercings?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button><h5>Do you do illegal drugs?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button><h5>Are you married?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button><br><h5>Are you married?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button><br><h5>Do you have nay childen?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button><br><h5>Have you got a criminal record?</h5><br><button class="button button5">Yes</button><button class="button button5">No</button>
+</div>
+  <br>
+  <br>
+    <span style="margin-left:0%;font-family:Arialcolor:black;font-weight:bold;"<h2>Customer service</h2></span>
+  <br>
+  <br>
+  <div class="square2"><input id="myInput" type="text" placeholder="Search common FAQs.."><br><ul id="myList">
+  <li>Are all medical conditions covered as part of the Camp Leaders insurance policy? - Yes most are but please check, complex disabilities may not be covered</li>
+    <br>
+  <li>What do I need to provide as part of my application? Any details on qualifications or extra-curricular activities</li>
+    <br>
+  <li>What items do I need to bring? - All the common items you would take on a holiday trip. Meals will be provided</li>
+    <br>
+   <h5>More...</h5>
+    </ul>
+  </div>
+  
+ 
+</div>
+  
+  
+<div class="sidenav">
+  <h1>Smaller Earth</h1>
+  <img src="https://i.stack.imgur.com/x8PhM.png" alt="Lamp" width="80" height="69">
+  <br>
+  <h2>Walter White</h2>
+  <h3>FT counsellor 2021</h3>
+  <br>
+  <div class="progressbar">
+  <label for="file">1/8 inactive</label>
+<progress id="file" max="80" value="20"> 20% </progress>
+  <br>
+  </div>
+  <br>
+  <a href="#Home">Home</a>
+  <br>
+  <br>
+  <a href="#Profile">Profile</a>
+  <a href="#Basic"> <span style="font-size: 14px">Basic Infomation</h3></span>
+   <a href="#Background"> <span style="font-size: 14px">Background</h3></span>
+  <a href="#Personal"> <span style="font-size: 14px">Personal Details</h3></span>
+   <a href="#Medical"> <span style="font-size: 14px">Medical History</h3></span>
+  <a href="#Education"> <span style="font-size: 14px">Education & Occupation</h3></span>
+  <br>
+  <br>
+  <a href="#Documents">Documents</a>
+  <br>
+  <br>
+  <a href="#Payments">Payments</a>
+  <br>
+  <br>
+  <a href="#Notifications">Notifications</a>
+  <br>
+  <br>
+  <a href="#Settings">Settings</a>
+  <h3>Log Out</h3>
+  <br>
+  
+  <h2>Customer Service</h2>
+    <div class="chat-container">
+      <ul class="chat">
+        <li class="message left">
+          <img
+            class="avatar"
+            src="https://i.stack.imgur.com/x8PhM.png"
+            alt=""
+          />
+          <p>Hi, are there any questions you wish to ask?</p>
+          <div class="profiletext">Walter</div>
+        </li>
+        <li class="message right">
+          <p>Hi, I wanted to know where Camp Canada is in Canada?</p>
+        </li>
+      <input type="text" class="text_input" placeholder="Message..." />
+    </div>
+  <h3>Switch Application</h3>
+  <div class="dropdown">
+  <button class="dropbtn">Programmes</button>
+  <div class="dropdown-content">
+   <a href="index2.html">Camp Canada 2021</a>
+    <a href="index.html">FT Counsellor 2021</a>
+    <a href="#Lifeguard">Lifeguard USA 2021</a>
+  </div> 
+</div>
+</div>
+  
+  </body>
+  </html>
